@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Night Invitation</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+        body {
+            font-family: "Sofia", sans-serif;
+			font-size: 30px;
+			text-shadow: 3px 3px 3px #ababab;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+			background: lightblue url("2.png") no-repeat fixed bottom;
+			word-wrap: break-word;
+        }
+
+        .container {
+            text-align: center;
+			word-wrap: break-word;
+        }
+        .message {
+            font-size: 24px;
+            margin-bottom: 20px;
+			text-align: left-side;
+			word-wrap: break-word;
+        }
+
+        .button {
+		    font-family: "Sofia", sans-serif;
+		    text-shadow: 3px 3px 3px #ababab;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .yes {
+            background-color: #28a745;
+        }
+
+        .no {
+            background-color: #dc3545;
+        }
+
+        .no:hover {
+            position: relative;
+            transition: all 0.5s;
+		}
+		.h2{
+		position: absolute; top: 2%; left: 50%; transform: translateX(-50%);
+		}
+		
+    </style>
+</head>
+<body>
+    <div class="container">
+		<h2>Date Invitation</h2>
+        <div class="message"><p style="overflow-wrap: break-word;">Are you excited to spend the whole day with the craziest person you’ve ever met?<br></p></div>
+		<a href="2nd_page.html"><button class="button yes" onclick="handleYes()">Hell Yesssss</button></a>
+        <button class="button no" onmouseover="moveNo()">Noo,Kinda Scary </button>
+	
+	</div>
+
+
+    <script>
+        const noButton = document.querySelector('.no');
+
+        function moveNo() {
+            const maxWidth = window.innerWidth - noButton.offsetWidth;
+            const maxHeight = window.innerHeight - noButton.offsetHeight;
+            const randomX = Math.random() * maxWidth;
+            const randomY = Math.random() * maxHeight;
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        }
+
+        function handleYes() {
+            document.querySelector('.message').innerText = "You are Booked for the day of 25th August 2024 for a date night with a very happy ending!!";
+            noButton.style.display = 'none';  // Hide the 'No' button
+        }
+    </script>
+</body>
+</html>
